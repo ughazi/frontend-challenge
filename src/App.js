@@ -1,18 +1,24 @@
-import React, { Component } from "react";
+import React from "react";
+import { BrowserRouter } from "react-router-dom";
 
-class App extends Component {
-  render() {
-    return (
-      <div>
-        <header>
-          <h1>Welcome to Upgrade challenge</h1>
-        </header>
-        <p>
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
+import { Routing } from "./components/Routing";
+import { UserDataProvider } from "./contexts/UserData.context";
+
+import "./App.css"
+
+/**
+ * @description App Component
+ * Sets up the app with required Providers
+ * @returns {JSX.Element}
+ */
+const App = () => {
+  return (
+    <BrowserRouter>
+      <UserDataProvider>
+        <Routing />
+      </UserDataProvider>
+    </BrowserRouter>
+  )
 }
 
-export default App;
+export default App
