@@ -1,6 +1,6 @@
 # Frontend Challenge Submission
 
-Based on the Upgrade's frontend challege description provided [here](https://github.com/upgrade/frontend-challenge), I have submitted the solution to the challenge on my [GitHub repository](https://github.com/ughazi/frontend-challenge). The solution is also deployed and available at ... .
+Based on the Upgrade's frontend challege description provided [here](https://github.com/upgrade/frontend-challenge), I have submitted the solution to the challenge on my [GitHub repository](https://github.com/ughazi/frontend-challenge).
 
 #### Additional Libraries/NPM Packages used to complete this challenge
 - [React Router v6](https://reactrouter.com/en/main) - A client-side routing library.
