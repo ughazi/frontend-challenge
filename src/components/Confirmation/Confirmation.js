@@ -43,29 +43,23 @@ export const Confirmation = () => {
 
   return (
     <div className="page-container">
-      {
-        loading ? <Spinner /> :
-          (
-            <>
-              <div className="row">
-                <span className="page-heading">CONFIRMATION</span>
-              </div>
-              <div className="row">
-                <ul>
-                  <li>{name}</li>
-                  <li>{email}</li>
-                  <li>{password.replace(/./g, '*')}</li>
-                  <li>{color}</li>
-                  <li>{terms ? 'AGREED' : 'NOT AGREED'}</li>
-                </ul>
-              </div>
-              <div className="button-container">
-                <button className="back-button" onClick={handleBackClicked}>BACK</button>
-                <button className="submit-button" onClick={handleSubmitClicked}>SUBMIT</button>
-              </div>
-            </>
-          )
-      }
+      <div className="row">
+        <span className="page-heading">CONFIRMATION</span>
+      </div>
+      <div className="row">
+        <ul>
+          <li>{name}</li>
+          <li>{email}</li>
+          <li>{password.replace(/./g, '*')}</li>
+          <li>{color}</li>
+          <li>{terms ? 'AGREED' : 'NOT AGREED'}</li>
+        </ul>
+      </div>
+      <div className="button-container">
+        <button className="back-button" onClick={handleBackClicked}>BACK</button>
+        <button className="submit-button" onClick={handleSubmitClicked}>SUBMIT</button>
+      </div>
+      {loading && <Spinner/>}
     </div>
   )
 }
