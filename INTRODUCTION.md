@@ -1,6 +1,6 @@
 # Frontend Challenge Submission
 
-Based on the Upgrade's frontend challege description provided [here](https://github.com/upgrade/frontend-challenge), I have submitted the solution to the challenge on the [fork](https://github.com/ughazi/frontend-challenge).
+Based on the Upgrade's frontend challege description provided [here](https://github.com/upgrade/frontend-challenge), I have submitted the solution to the challenge on the fork [here](https://github.com/ughazi/frontend-challenge).
 
 #### Additional Libraries/NPM Packages used to complete this challenge
 - [React Router v6](https://reactrouter.com/en/main) - A client-side routing library.
@@ -9,7 +9,7 @@ Based on the Upgrade's frontend challege description provided [here](https://git
 #### Concepts/Code Explained
 
  - As mentioned in the instructions, this app consists of multi step form to collect user data.
- - Each step of the form is built as a separate React component which are 
+ - Each step of the form is built as a separate React component.
  - Each of these React components are displayed on different routes and live in their own individual folders in the `components` folder.
  - The routes are mapped in the `src/components/Routing/Routing.js` file using the React Router's `Route` component. 
  - The state of the form data is maintained in a global `UserDataContext` in the `src/contexts/UserData.context.js` file. This helps to move back and forth between different routes/components without losing the entered/selected values and to reset the state to initial values when the "Restart" button is clicked on the `Success` or `Error` components. The `UserDataContext` exposes the state values and its set state functions via context provider.
