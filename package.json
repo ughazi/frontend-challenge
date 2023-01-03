@@ -2,13 +2,11 @@
   "name": "upgrade-challenge",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://ughazi.github.io",
   "dependencies": {
     "express": "^4.17.1",
-    "gh-pages": "^4.0.0",
     "npm-run-all": "^4.1.5",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-loader-spinner": "^5.3.4",
     "react-router-dom": "^6.5.0",
     "react-scripts": "5.0.0",
@@ -19,10 +17,11 @@
     "start:dev": "react-scripts start",
     "start": "run-p start:*",
     "build": "react-scripts build",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -b master -d build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix",
+    "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc"
   },
   "browserslist": {
     "production": [
@@ -37,7 +36,12 @@
     ]
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
     "eslint": "^8.30.0",
-    "eslint-plugin-react": "^7.31.11"
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.31.11",
+    "prettier": "^2.8.1"
   }
 }
