@@ -1,6 +1,6 @@
-import React, { useContext } from "react";
-import { useNavigate } from "react-router-dom";
-import { UserDataContext } from "../../contexts/UserData.context"
+import React, { useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { UserDataContext } from '../../contexts/UserData.context';
 
 /**
  * @description MoreInfo Component
@@ -8,15 +8,15 @@ import { UserDataContext } from "../../contexts/UserData.context"
  */
 export const Success = () => {
   const navigate = useNavigate();
-  const { resetState } = useContext(UserDataContext)
+  const { resetState } = useContext(UserDataContext);
 
   /**
-  * @description Handle Restart Click
-  */
+   * @description Handle Restart Click
+   */
   const handleRestartClicked = () => {
-    resetState()
-    navigate('/')
-  }
+    resetState();
+    navigate('/');
+  };
 
   return (
     <div className="page-container">
@@ -30,8 +30,10 @@ export const Success = () => {
         <span>YOU SHOULD RECEIVE A CONFIRMATION EMAIL SOON.</span>
       </div>
       <div className="button-container">
-        <button className="restart-button" onClick={handleRestartClicked}>RESTART</button>
+        <button className="restart-button" onClick={handleRestartClicked}>
+          RESTART
+        </button>
       </div>
     </div>
-  )
-}
+  );
+};

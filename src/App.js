@@ -1,10 +1,10 @@
-import React from "react";
-import { BrowserRouter } from "react-router-dom";
+import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
 
-import { Routing } from "./components/Routing";
-import { UserDataProvider } from "./contexts/UserData.context";
+import { Routing } from './components';
+import { UserDataProvider } from './contexts/UserData.context';
 
-import "./App.css"
+import './App.css';
 
 /**
  * @description App Component
@@ -18,7 +18,7 @@ const App = () => {
         <Routing />
       </UserDataProvider>
     </BrowserRouter>
-  )
-}
+  );
+};
 
-export default App
+export default App;

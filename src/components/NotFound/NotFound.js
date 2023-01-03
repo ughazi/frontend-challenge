@@ -1,5 +1,3 @@
-import React from "react"
-
 export const NotFound = () => {
   return (
     <div className="page-container">
@@ -7,5 +5,5 @@ export const NotFound = () => {
         <span className="page-heading">ROUTE NOT FOUND</span>
       </div>
     </div>
-  )
-}
+  );
+};

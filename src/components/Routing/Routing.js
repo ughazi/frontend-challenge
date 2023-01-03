@@ -1,11 +1,6 @@
-import React from "react"
-import { Route, Routes } from "react-router-dom"
-import { Confirmation } from "../Confirmation"
-import { ErrorComponent } from "../Error"
-import { MoreInfo } from "../MoreInfo"
-import { NotFound } from "../NotFound"
-import { Signup } from "../Signup"
-import { Success } from "../Success"
+import React from 'react';
+import { Route, Routes } from 'react-router-dom';
+import { Confirmation, ErrorComponent, MoreInfo, NotFound, Signup, Success } from '../../components';
 
 /**
  * @description `Routing` component
@@ -21,5 +16,5 @@ export const Routing = () => {
       <Route path="/error" element={<ErrorComponent />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
-  )
-}
+  );
+};

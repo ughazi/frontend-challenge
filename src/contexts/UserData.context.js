@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import React, { createContext, useCallback, useState } from "react";
+import React, { createContext, useCallback, useState } from 'react';
 
 /**
  * @typedef UserDataContext
@@ -20,19 +20,19 @@ import React, { createContext, useCallback, useState } from "react";
 export const UserDataContext = createContext({});
 
 export const UserDataProvider = (props) => {
-  const [name, setName] = useState("")
-  const [email, setEmail] = useState("")
-  const [password, setPassword] = useState("")
-  const [color, setColor] = useState("")
-  const [terms, setTerms] = useState(false)
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [color, setColor] = useState('');
+  const [terms, setTerms] = useState(false);
 
   const resetState = useCallback(() => {
-    setName("")
-    setEmail("")
-    setPassword("")
-    setColor("")
-    setTerms(false)
-  }, [])
+    setName('');
+    setEmail('');
+    setPassword('');
+    setColor('');
+    setTerms(false);
+  }, []);
 
   return (
     <UserDataContext.Provider
@@ -51,5 +51,5 @@ export const UserDataProvider = (props) => {
       }}>
       {props.children}
     </UserDataContext.Provider>
-  )
-}
+  );
+};

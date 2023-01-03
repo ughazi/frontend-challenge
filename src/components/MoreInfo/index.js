@@ -1,1 +1,1 @@
-export * from "./MoreInfo"
+export * from './MoreInfo';
