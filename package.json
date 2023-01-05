@@ -17,7 +17,7 @@
     "start:dev": "react-scripts start",
     "start": "run-p start:*",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
+    "test": "react-scripts test --watchAll=false --silent=false --coverage=true",
     "eject": "react-scripts eject",
     "lint": "eslint .",
     "lint:fix": "eslint --fix",
