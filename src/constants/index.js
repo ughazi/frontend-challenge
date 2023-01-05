@@ -1,12 +1,32 @@
 export const constants = {
-  pageHeadings: {
+  PAGE_HEADINGS: {
+    SIGN_UP: 'SIGN UP',
     CONFIRMATION: 'CONFIRMATION',
     ERROR: 'ERROR',
     ADDITIONAL_INFO: 'ADDITIONAL INFO',
     NOT_FOUND: 'ROUTE NOT FOUND',
-    SUCCESS: 'SUCCESS'
+    SUCCESS: 'SUCCESS!'
   },
-  apiUrl: 'http://localhost:3001/api',
-  apiColorsPath: 'colors',
-  apiSubmitPath: 'submit'
+  TERMS_TEXT: {
+    AGREED: 'AGREED',
+    NOT_AGREED: 'NOT AGREED'
+  },
+  BUTTON_TEXT: {
+    BACK: 'BACK',
+    NEXT: 'NEXT',
+    SUBMIT: 'SUBMIT',
+    RESTART: 'RESTART'
+  },
+  ERROR_TEXT: 'UH OH, SOMETHING WENT WRONG. PLEASE TRY AGAIN LATER.',
+  // SUCCESS_TEXT: 'SUCCESS!',
+  CONFIRMATION_TEXT: 'YOU SHOULD RECEIVE A CONFIRMATION EMAIL SOON.',
+  COLORS_ERROR: 'There was an error retrieving the colors.',
+  ROUTE_NOT_FOUND_ERROR: 'ROUTE NOT FOUND',
+  TERMS_LABEL: 'I AGREE TO TERMS AND CONDITIONS',
+  SELECT_COLOR_OPTION: 'SELECT YOUR FAVORITE COLOR',
+  API_URL: 'http://localhost:3001/api',
+  COLORS_PATH: 'colors',
+  SUBMIT_PATH: 'submit',
+
+  SPINNER_LOADING_LABEL: 'tail-spin-loading'
 };

@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { constants } from '../../constants';
 import { UserDataContext } from '../../contexts/UserData.context';
 
 /**
@@ -7,6 +8,7 @@ import { UserDataContext } from '../../contexts/UserData.context';
  * @returns {JSX.Element}
  */
 export const Success = () => {
+  const { PAGE_HEADINGS, CONFIRMATION_TEXT, BUTTON_TEXT } = constants;
   const navigate = useNavigate();
   const { resetState } = useContext(UserDataContext);
 
@@ -21,17 +23,17 @@ export const Success = () => {
   return (
     <div className="page-container">
       <div className="row">
-        <span className="page-heading">SUCCESS!</span>
+        <span className="page-heading">{PAGE_HEADINGS.SUCCESS}</span>
       </div>
       <div className="icon">
         <span className="page-heading">&#10003;</span>
       </div>
       <div className="row">
-        <span>YOU SHOULD RECEIVE A CONFIRMATION EMAIL SOON.</span>
+        <span>{CONFIRMATION_TEXT}</span>
       </div>
       <div className="button-container">
         <button className="restart-button" onClick={handleRestartClicked}>
-          RESTART
+          {BUTTON_TEXT.RESTART}
         </button>
       </div>
     </div>

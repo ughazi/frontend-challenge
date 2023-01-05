@@ -4,7 +4,7 @@ import { constants } from '../../constants';
 import { UserDataContext } from '../../contexts/UserData.context';
 
 export const ErrorComponent = () => {
-  const { pageHeadings } = constants;
+  const { PAGE_HEADINGS, BUTTON_TEXT, ERROR_TEXT } = constants;
 
   const navigate = useNavigate();
   const { resetState } = useContext(UserDataContext);
@@ -20,17 +20,17 @@ export const ErrorComponent = () => {
   return (
     <div className="page-container">
       <div className="row">
-        <span className="page-heading">{pageHeadings.ERROR}</span>
+        <span className="page-heading">{PAGE_HEADINGS.ERROR}</span>
       </div>
       <div className="row">
         <span className="page-heading">&#10060;</span>
       </div>
       <div className="row">
-        <span>UH OH, SOMETHING WENT WRONG. PLEASE TRY AGAIN LATER.</span>
+        <span>{ERROR_TEXT}</span>
       </div>
       <div className="button-container">
         <button className="restart-button" onClick={handleRestartClicked}>
-          RESTART
+          {BUTTON_TEXT.RESTART}
         </button>
       </div>
     </div>

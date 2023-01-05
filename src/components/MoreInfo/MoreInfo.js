@@ -10,16 +10,16 @@ import { Spinner } from '../Spinner';
  * @returns {JSX.Element}
  */
 export const MoreInfo = () => {
-  const { apiUrl, apiColorsPath, pageHeadings } = constants;
+  const { API_URL, COLORS_PATH, COLORS_ERROR, PAGE_HEADINGS, TERMS_LABEL, SELECT_COLOR_OPTION } = constants;
 
   const navigate = useNavigate();
   const { terms, setTerms, setColor } = useContext(UserDataContext);
   const [{ data: colors = [], error, loading }, fetchData] = useFetch();
 
   useEffect(() => {
-    const getColorsUrl = `${apiUrl}/${apiColorsPath}`;
+    const getColorsUrl = `${API_URL}/${COLORS_PATH}`;
     fetchData(getColorsUrl);
-  }, [apiColorsPath, apiUrl, fetchData]);
+  }, [COLORS_PATH, API_URL, fetchData]);
 
   /**
    * @description Handle Next Button Click
@@ -47,19 +47,19 @@ export const MoreInfo = () => {
     <div className="page-container">
       {error && (
         <div className="row">
-          <span className="info">There was an error retrieving the colors.</span>
+          <span className="info">{COLORS_ERROR}</span>
         </div>
       )}
       <div className="row">
-        <span className="page-heading">{pageHeadings.ADDITIONAL_INFO}</span>
+        <span className="page-heading">{PAGE_HEADINGS.ADDITIONAL_INFO}</span>
       </div>
       <div className="row">
-        {loading || !colors?.length ? (
+        {loading ? (
           <Spinner />
         ) : (
           <select onChange={handleColorChange}>
-            <option>SELECT YOUR FAVORITE COLOR</option>
-            {colors.map((color) => (
+            <option>{SELECT_COLOR_OPTION}</option>
+            {colors?.map((color) => (
               <option key={color}>{color}</option>
             ))}
           </select>
@@ -67,7 +67,7 @@ export const MoreInfo = () => {
       </div>
       <div className="row">
         <input type="checkbox" className="checkbox" id="terms" checked={terms} onChange={handleChange} />
-        <label htmlFor="terms">I AGREE TO TERMS AND CONDITIONS</label>
+        <label htmlFor="terms">{TERMS_LABEL}</label>
       </div>
       <div className="button-container">
         <button className="back-button" onClick={handleBackClicked}>

@@ -10,7 +10,7 @@ import { Spinner } from '../Spinner';
  * @returns {JSX.Element}
  */
 export const Confirmation = () => {
-  const { pageHeadings, apiUrl, apiSubmitPath } = constants;
+  const { PAGE_HEADINGS, API_URL, SUBMIT_PATH, TERMS_TEXT, BUTTON_TEXT } = constants;
 
   const navigate = useNavigate();
   const { name, email, password, color, terms } = useContext(UserDataContext);
@@ -28,7 +28,7 @@ export const Confirmation = () => {
    * @description Handle Next Button Click
    */
   const handleSubmitClicked = async () => {
-    const submitUrl = `${apiUrl}/${apiSubmitPath}`;
+    const submitUrl = `${API_URL}/${SUBMIT_PATH}`;
     const body = JSON.stringify({ name, email, password, color, terms });
     fetchData(submitUrl, false, 'POST', body);
   };
@@ -41,7 +41,7 @@ export const Confirmation = () => {
   return (
     <div className="page-container">
       <div className="row">
-        <span className="page-heading">{pageHeadings.CONFIRMATION}</span>
+        <span className="page-heading">{PAGE_HEADINGS.CONFIRMATION}</span>
       </div>
       <div className="row">
         <ul>
@@ -49,15 +49,15 @@ export const Confirmation = () => {
           <li>{email}</li>
           <li>{password.replace(/./g, '*')}</li>
           <li>{color}</li>
-          <li>{terms ? 'AGREED' : 'NOT AGREED'}</li>
+          <li>{terms ? TERMS_TEXT.AGREED : TERMS_TEXT.NOT_AGREED}</li>
         </ul>
       </div>
       <div className="button-container">
         <button className="back-button" onClick={handleBackClicked}>
-          BACK
+          {BUTTON_TEXT.BACK}
         </button>
         <button className="submit-button" onClick={handleSubmitClicked}>
-          SUBMIT
+          {BUTTON_TEXT.SUBMIT}
         </button>
       </div>
       {loading && <Spinner />}
