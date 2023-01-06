@@ -52,6 +52,7 @@ export const useFetch = () => {
    * @returns {object | string}
    */
   const getDataFromResponse = (response) => {
+    if (!response.headers) throw new Error('There was an error with the request.');
     const contentType = response.headers.get('content-type');
     if (response.status !== 200) throw new Error('There was an error with the request.');
     if (contentType === null) return Promise.resolve(null);
@@ -59,14 +60,6 @@ export const useFetch = () => {
     else if (contentType.startsWith('text/plain;')) return response.text();
     else throw new Error(`Unsupported response content-type: ${contentType}`);
   };
-
-  /**
-   * @description fetchData - Calls the backend using fetch api
-   * @param {string} url
-   * @param {boolean} [useCache=true]
-   * @param {string} [method='GET']
-   * @param {object} body
-   */
 
   /**
    * @type {FetchDataFunction}
@@ -87,6 +80,7 @@ export const useFetch = () => {
           },
           ...(body && { body })
         };
+
         const response = await fetch(url, requestOptions);
         const data = await getDataFromResponse(response);
         cache.current[url] = data;
