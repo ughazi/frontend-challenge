@@ -18,7 +18,6 @@ export const constants = {
     RESTART: 'RESTART'
   },
   ERROR_TEXT: 'UH OH, SOMETHING WENT WRONG. PLEASE TRY AGAIN LATER.',
-  // SUCCESS_TEXT: 'SUCCESS!',
   CONFIRMATION_TEXT: 'YOU SHOULD RECEIVE A CONFIRMATION EMAIL SOON.',
   COLORS_ERROR: 'There was an error retrieving the colors.',
   ROUTE_NOT_FOUND_ERROR: 'ROUTE NOT FOUND',
@@ -27,6 +26,5 @@ export const constants = {
   API_URL: 'http://localhost:3001/api',
   COLORS_PATH: 'colors',
   SUBMIT_PATH: 'submit',
-
   SPINNER_LOADING_LABEL: 'tail-spin-loading'
 };
