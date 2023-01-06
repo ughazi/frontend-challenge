@@ -13,7 +13,7 @@ export const MoreInfo = () => {
   const { API_URL, COLORS_PATH, COLORS_ERROR, PAGE_HEADINGS, TERMS_LABEL, SELECT_COLOR_OPTION } = constants;
 
   const navigate = useNavigate();
-  const { terms, setTerms, setColor } = useContext(UserDataContext);
+  const { color: selectedColor = '', terms, setTerms, setColor } = useContext(UserDataContext);
   const [{ data: colors = [], error, loading }, fetchData] = useFetch();
 
   useEffect(() => {
@@ -57,7 +57,7 @@ export const MoreInfo = () => {
         {loading ? (
           <Spinner />
         ) : (
-          <select onChange={handleColorChange}>
+          <select onChange={handleColorChange} value={selectedColor}>
             <option>{SELECT_COLOR_OPTION}</option>
             {colors?.map((color) => (
               <option key={color}>{color}</option>

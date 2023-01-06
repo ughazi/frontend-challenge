@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import React, { createContext, useCallback, useState } from 'react';
+import React, { createContext, useCallback, useEffect, useState } from 'react';
 
 /**
  * @typedef UserDataContext
@@ -16,15 +16,20 @@ import React, { createContext, useCallback, useState } from 'react';
  * @property {function} resetState
  */
 
+function getInitialState() {
+  const userData = localStorage.getItem('user-data');
+  return userData ? JSON.parse(userData) : {};
+}
+
 /** @type {import('react').Context<UserDataContext>} */
 export const UserDataContext = createContext({});
 
 export const UserDataProvider = (props) => {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [color, setColor] = useState('');
-  const [terms, setTerms] = useState(false);
+  const [name, setName] = useState(getInitialState().name ?? '');
+  const [email, setEmail] = useState(getInitialState().email ?? '');
+  const [password, setPassword] = useState(getInitialState().password ?? '');
+  const [color, setColor] = useState(getInitialState().color ?? '');
+  const [terms, setTerms] = useState(getInitialState().terms ?? false);
 
   const resetState = useCallback(() => {
     setName('');
@@ -33,6 +38,10 @@ export const UserDataProvider = (props) => {
     setColor('');
     setTerms(false);
   }, []);
+
+  useEffect(() => {
+    localStorage.setItem('user-data', JSON.stringify({ name, email, password, color, terms }));
+  }, [name, email, password, color, terms]);
 
   return (
     <UserDataContext.Provider
